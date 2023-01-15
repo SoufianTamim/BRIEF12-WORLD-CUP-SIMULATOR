@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SoufianTamim/BRIEF12-WORLD-CUP-SIMULATOR#readme",
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.3"
   }
 }
