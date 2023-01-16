@@ -19,11 +19,11 @@
             <p>Morocco</p>
           </div>
           <div class="d-flex flex-row col-4 mb-3 input-group-sm">
-            <input type="number"  class="form-control w-50 mx-3" name="MO_SC_M_1_IR"
-            value="<?php if(isset($_POST['MO_SC_M_1_IR'])) echo $_POST['MO_SC_M_1_IR']; ?>0"/>
+            <input type="number"  class="form-control w-50 mx-3" name="morocco_iran_1"
+            value="<?php if(isset($_POST['morocco_iran_1'])) echo $_POST['morocco_iran_1']; ?>"/>
             <span>VS</span>
-            <input type="number"  class="form-control w-50 mx-3" name="IR_SC_M_1_MO"
-            value="<?php if(isset($_POST['IR_SC_M_1_MO'])) echo $_POST['IR_SC_M_1_MO']; ?>0"/>
+            <input type="number"  class="form-control w-50 mx-3" name="iran_morocco_1"
+            value="<?php if(isset($_POST['iran_morocco_1'])) echo $_POST['iran_morocco_1']; ?>"/>
           </div>
           <div class="col-2">
             <p>Iran</p>
@@ -37,11 +37,11 @@
             <p>Portugual</p>
           </div>
           <div class="d-flex flex-row col-4 mb-3 input-group-sm">
-            <input type="number" class="form-control w-50 mx-3" name="PO_SC_M_1_SP"
-            value="<?php if(isset($_POST['PO_SC_M_1_SP'])) echo $_POST['PO_SC_M_1_SP']; ?>0"/>
+            <input type="number" class="form-control w-50 mx-3" name="portugual_spain_1"
+            value="<?php if(isset($_POST['portugual_spain_1'])) echo $_POST['portugual_spain_1']; ?>"/>
             <span>VS</span>
-            <input type="number" class="form-control w-50 mx-3" name="SP_SC_M_1_PO"
-            value="<?php if(isset($_POST['SP_SC_M_1_PO'])) echo $_POST['SP_SC_M_1_PO']; ?>0"/>
+            <input type="number" class="form-control w-50 mx-3" name="spain_portugual_1"
+            value="<?php if(isset($_POST['spain_portugual_1'])) echo $_POST['spain_portugual_1']; ?>"/>
           </div>
           <div class="col-2">
             <p>Spain</p>
@@ -56,11 +56,11 @@
             <p>Spain</p>
           </div>
           <div class="d-flex flex-row col-4 mb-3 input-group-sm">
-            <input type="number"  class="form-control w-50 mx-3" name="SP_SC_M_2_MO"
-             value="<?php if(isset($_POST['SP_SC_M_2_MO'])) echo $_POST['SP_SC_M_2_MO']; ?>0" />
+            <input type="number"  class="form-control w-50 mx-3" name="spain_morocco_2"
+             value="<?php if(isset($_POST['spain_morocco_2'])) echo $_POST['spain_morocco_2']; ?>" />
             <span>VS</span>
-            <input type="number"  class="form-control w-50 mx-3" name="MO_SC_M_2_SP"
-             value="<?php if(isset($_POST['MO_SC_M_2_SP'])) echo $_POST['MO_SC_M_2_SP']; ?>0" />
+            <input type="number"  class="form-control w-50 mx-3" name="morocco_spain_2"
+             value="<?php if(isset($_POST['morocco_spain_2'])) echo $_POST['morocco_spain_2']; ?>" />
           </div>
           <div class="col-2">
             <p>Morocco</p>
@@ -74,11 +74,11 @@
               <p>Iran</p>
             </div>
             <div class="d-flex flex-row col-4 mb-3 input-group-sm">
-          <input type="number" class="form-control w-50 mx-3" name="IR_SC_M_2_PO"
-          value="<?php if(isset($_POST['IR_SC_M_2_PO'])) echo $_POST['IR_SC_M_2_PO']; ?>0" />
+          <input type="number" class="form-control w-50 mx-3" name="iran_portugual_2"
+          value="<?php if(isset($_POST['iran_portugual_2'])) echo $_POST['iran_portugual_2']; ?>" />
           <span>VS</span>
-          <input type="number" class="form-control w-50 mx-3" name="PO_SC_M_2_IR"
-          value="<?php if(isset($_POST['PO_SC_M_2_IR'])) echo $_POST['PO_SC_M_2_IR']; ?>0"/>
+          <input type="number" class="form-control w-50 mx-3" name="portugual_iran_2"
+          value="<?php if(isset($_POST['portugual_iran_2'])) echo $_POST['portugual_iran_2']; ?>"/>
         </div>
         <div class="col-2">
           <p>Portugual</p>
@@ -92,11 +92,11 @@
           <p>Spain</p>
         </div>
         <div class="d-flex flex-row col-4 mb-3 input-group-sm">
-          <input type="number" class="form-control w-50 mx-3" name="SP_SC_M_3_IR"
-          value="<?php if(isset($_POST['SP_SC_M_3_IR'])) echo $_POST['SP_SC_M_3_IR']; ?>0"/>
+          <input type="number" class="form-control w-50 mx-3" name="spain_iran_3"
+          value="<?php if(isset($_POST['spain_iran_3'])) echo $_POST['spain_iran_3']; ?>"/>
           <span>VS</span>
-          <input type="number" class="form-control w-50 mx-3" name="IR_SC_M_3_SP"
-          value="<?php if(isset($_POST['IR_SC_M_3_SP'])) echo $_POST['IR_SC_M_3_SP']; ?>0"/>
+          <input type="number" class="form-control w-50 mx-3" name="iran_spain_3"
+          value="<?php if(isset($_POST['iran_spain_3'])) echo $_POST['iran_spain_3']; ?>"/>
         </div>
         <div class="col-2">
           <p>Iran</p>
@@ -110,11 +110,11 @@
           <p>Portugual</p>
         </div>
         <div class="d-flex flex-row col-4 mb-3 input-group-sm">
-          <input type="number"  class="form-control w-50 mx-3" name="PO_SC_M_3_MO"
-          value="<?php if(isset($_POST['PO_SC_M_3_MO'])) echo $_POST['PO_SC_M_3_MO']; ?>0" />
+          <input type="number"  class="form-control w-50 mx-3" name="portugual_morocco_3"
+          value="<?php if(isset($_POST['portugual_morocco_3'])) echo $_POST['portugual_morocco_3']; ?>" />
           <span>VS</span>
-          <input type="number"  class="form-control w-50 mx-3" name="MO_SC_M_3_PO"
-          value="<?php if(isset($_POST['MO_SC_M_3_PO'])) echo $_POST['MO_SC_M_3_PO']; ?>0" />
+          <input type="number"  class="form-control w-50 mx-3" name="morocco_portugual_3"
+          value="<?php if(isset($_POST['morocco_portugual_3'])) echo $_POST['morocco_portugual_3']; ?>" />
         </div>
         <div class="col-2">
           <p>Morocco</p>
@@ -155,9 +155,9 @@
     <?php
     function buildTable(){
       foreach($GLOBALS['Table'] as $x => $val) {       
-        $count = 1;
+        $count += 1;
         echo "<tr><th scope='row'>".$count."</th>";
-        $count ++;
+        
         echo "<td>".$x."</td>";
           foreach($val as $key => $value) {
             echo "<td>".$value."</td>";
@@ -172,24 +172,72 @@
             simulate();
         }
         function simulate() {
-            $GLOBALS['Table']['morocco']['goals_scored'] = $_POST["MO_SC_M_1_IR"]+$_POST["MO_SC_M_2_SP"]+ $_POST["MO_SC_M_3_PO"];
-            $GLOBALS['Table']['iran']['goals_scored'] = $_POST["IR_SC_M_1_MO"]+$_POST["IR_SC_M_2_PO"] + $_POST["IR_SC_M_3_SP"];
-            $GLOBALS['Table']['portugual']['goals_scored'] = $_POST["PO_SC_M_1_SP"]+$_POST["PO_SC_M_2_IR"] + $_POST["PO_SC_M_3_MO"];
-            $GLOBALS['Table']['spain']['goals_scored'] = $_POST["SP_SC_M_1_PO"]+$_POST["SP_SC_M_2_MO"]+$_POST["SP_SC_M_3_IR"];
+            $GLOBALS['Table']['morocco']['goals_scored'] = $_POST["morocco_iran_1"]+$_POST["morocco_spain_2"]+ $_POST["morocco_portugual_3"];
+            $GLOBALS['Table']['iran']['goals_scored'] = $_POST["iran_morocco_1"]+$_POST["iran_portugual_2"] + $_POST["iran_spain_3"];
+            $GLOBALS['Table']['portugual']['goals_scored'] = $_POST["portugual_spain_1"]+$_POST["portugual_iran_2"] + $_POST["portugual_morocco_3"];
+            $GLOBALS['Table']['spain']['goals_scored'] = $_POST["spain_portugual_1"]+$_POST["spain_morocco_2"]+$_POST["spain_iran_3"];
 
-            $GLOBALS['Table']['morocco']['goals_received'] = $_POST["IR_SC_M_1_MO"]+$_POST["SP_SC_M_2_MO"]+$_POST["PO_SC_M_3_MO"];
-            $GLOBALS['Table']['iran']['goals_received'] = $_POST["MO_SC_M_1_IR"]+$_POST["PO_SC_M_2_IR"]+$_POST["SP_SC_M_3_IR"];
-            $GLOBALS['Table']['portugual']['goals_received'] = $_POST["SP_SC_M_1_PO"]+$_POST["IR_SC_M_2_PO"]+$_POST["MO_SC_M_3_PO"];
-            $GLOBALS['Table']['spain']['goals_received'] = $_POST["PO_SC_M_1_SP"]+$_POST["MO_SC_M_2_SP"]+$_POST["IR_SC_M_3_SP"];
+            $GLOBALS['Table']['morocco']['goals_received'] = $_POST["iran_morocco_1"]+$_POST["spain_morocco_2"]+$_POST["portugual_morocco_3"];
+            $GLOBALS['Table']['iran']['goals_received'] = $_POST["morocco_iran_1"]+$_POST["portugual_iran_2"]+$_POST["spain_iran_3"];
+            $GLOBALS['Table']['portugual']['goals_received'] = $_POST["spain_portugual_1"]+$_POST["iran_portugual_2"]+$_POST["morocco_portugual_3"];
+            $GLOBALS['Table']['spain']['goals_received'] = $_POST["portugual_spain_1"]+$_POST["morocco_spain_2"]+$_POST["iran_spain_3"];
 
             $GLOBALS['Table']['morocco']['difference'] = $GLOBALS['Table']['morocco']['goals_scored'] - $GLOBALS['Table']['morocco']['goals_received'];
             $GLOBALS['Table']['iran']['difference'] = $GLOBALS['Table']['iran']['goals_scored'] - $GLOBALS['Table']['iran']['goals_received'];
             $GLOBALS['Table']['portugual']['difference'] = $GLOBALS['Table']['portugual']['goals_scored'] - $GLOBALS['Table']['portugual']['goals_received'];
             $GLOBALS['Table']['spain']['difference'] = $GLOBALS['Table']['spain']['goals_scored'] - $GLOBALS['Table']['spain']['goals_received'];
 
-          }
+
         // }
-        
+        if($_POST["morocco_iran_1"] != "" ){
+          $GLOBALS['Table']['iran']['games_played'] = 1;
+          $GLOBALS['Table']['morocco']['games_played'] = 1;
+        }
+        if($_POST["spain_portugual_1"] != "") {
+          $GLOBALS['Table']['spain']['games_played'] = 1;
+          $GLOBALS['Table']['portugual']['games_played'] = 1;
+        }
+        if($_POST["spain_morocco_2"] != "") {
+          $GLOBALS['Table']['spain']['games_played'] = 2;
+          $GLOBALS['Table']['morocco']['games_played'] = 2;
+        }
+        if($_POST["iran_portugual_2"] != "") {
+          $GLOBALS['Table']['spain']['games_played'] = 2 ;
+          $GLOBALS['Table']['iran']['games_played'] = 2;
+        }
+        if($_POST["spain_iran_3"] != "") {
+          $GLOBALS['Table']['spain']['games_played'] = 3;
+          $GLOBALS['Table']['iran']['games_played'] = 3;
+        }
+        if($_POST["morocco_portugual_3"] != "") {
+          $GLOBALS['Table']['morocco']['games_played'] = 3;
+          $GLOBALS['Table']['portugual']['games_played'] = 3;
+        }
+
+
+        // ================================================
+        //======== conditions of games =================
+        // ================================================
+
+          if($_POST["morocco_iran_1"] < $_POST["iran_morocco_1"]){
+            $GLOBALS['Table']['iran']['points'] = 3;
+            $GLOBALS['Table']['iran']['games_won'] = 1;
+            $GLOBALS['Table']['morocco']['games_lose'] = 1;
+
+          }elseif($_POST["morocco_iran_1"] > $_POST["iran_morocco_1"]){
+            $GLOBALS['Table']['morocco']['points'] = 3;
+            $GLOBALS['Table']['morocco']['games_won'] = 1;
+            $GLOBALS['Table']['iran']['games_lose'] = 1;
+
+          }else{
+            $GLOBALS['Table']['morocco']['points'] = 1;
+            $GLOBALS['Table']['iran']['points'] = 1;
+            $GLOBALS['Table']['morocco']['games_equal'] = 1;
+            $GLOBALS['Table']['iran']['games_equal'] = 1;
+          }
+
+        }
+
         buildTable();
     ?>
   </table>
