@@ -94,7 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
         <?php 
         }
         ?>
-   
       <section class="d-flex flex-column  m-2 container mx-auto ">
         <h2 class="text-center text-success">WINNER TABLE</h2>
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="text-center" >
@@ -185,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
                         </tr>
                         <?php 
                       }
-              }
+                }
                   } elseif ( count(GETCOMMONS(resultCouter($matches)))  == 2) {
                       foreach ( sortByTwoEquals(resultCouter($matches))  as $key => $value) {
                           ?>
@@ -210,8 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
               }
           ?>
       </table>
-      
-      </section>
+    </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
