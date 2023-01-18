@@ -13,9 +13,9 @@
       <section>
         <?php
           $Table = ["morocco" => ["points" => $ptsM = 0,"games_played" => $playedM = 0,"games_won" => $wonM = 0,"games_equal" => $equalM = 0,"games_lose" => $loseM = 0, "goals_scored" => $scoredM = 0,"goals_received" => $receivedM = 0 , "difference" => $differenceM = 0],
-          "portugual" => ["points" => $ptsP = 0,"games_played" => $playedP = 0, "games_won" => $wonP = 0,"games_equal" => $equalP = 0, "games_lose" => $loseP = 0, "goals_scored" => $scoredP = 0, "goals_received" => $receivedP = 0, "difference" => $differenceP = 0],
-          "spain" => ["points" => $ptsS = 0,"games_played" => $playedS = 0, "games_won" => $wonS = 0,"games_equal" => $equalS = 0, "games_lose" => $loseS = 0, "goals_scored" => $scoredS = 0, "goals_received" => $receivedS = 0, "difference" => $differenceS = 0],
-          "iran" => ["points" => $ptsI = 0,"games_played" => $playedI = 0, "games_won" => $wonI = 0,"games_equal" => $equalI = 0, "games_lose" => $loseI = 0, "goals_scored" => $scoredI = 0, "goals_received" => $receivedI = 0, "difference" => $differenceI = 0] 
+                    "iran" => ["points" => $ptsI = 0,"games_played" => $playedI = 0, "games_won" => $wonI = 0,"games_equal" => $equalI = 0, "games_lose" => $loseI = 0, "goals_scored" => $scoredI = 0, "goals_received" => $receivedI = 0, "difference" => $differenceI = 0],
+                    "portugual" => ["points" => $ptsP = 0,"games_played" => $playedP = 0, "games_won" => $wonP = 0,"games_equal" => $equalP = 0, "games_lose" => $loseP = 0, "goals_scored" => $scoredP = 0, "goals_received" => $receivedP = 0, "difference" => $differenceP = 0],
+                    "spain" => ["points" => $ptsS = 0,"games_played" => $playedS = 0, "games_won" => $wonS = 0,"games_equal" => $equalS = 0, "games_lose" => $loseS = 0, "goals_scored" => $scoredS = 0, "goals_received" => $receivedS = 0, "difference" => $differenceS = 0]
         ]; 
         $matches = ["MOROCCO_VS_IRAN" =>      ["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
                     "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
@@ -24,22 +24,7 @@
                     "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
                     "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
       ]; 
-
-      // $keys = array_keys($matches[0]);
-      // echo $keys[1];
-
-
-          foreach ($matches as $key => $value){   
-
-
-
-
-
-
-
-
-
-
+        foreach ($matches as $key => $value){   
         ?>
         <form method="post">
           <div class="d-flex align-items-center justify-content-center bg-info  p-2 m-2 rounded">
@@ -47,12 +32,9 @@
               <div class="d-flex flex-row align-items-center justify-content-center">
                 <div class="d-flex flex-row">
                   <p><?php 
-                 
-
                   foreach ($value as $nkey => $nvalue){
                               if ($nvalue === 0) {
                                 echo $nkey;
-                                echo "<br>";
                                 break;
                           }
                            } 
@@ -68,7 +50,7 @@
                   <p><?php  
                         foreach ($value as $nkey => $nvalue) {
                           $nkey = array_keys($value);
-                          echo $nkey[1] . "<br>";
+                          echo $nkey[1];
                           break;
                       }
                       ?>
@@ -109,8 +91,8 @@
           $xvalue) { $count += 1; 
             echo "<tr><th scope='row'>".$count."</th>"; 
             echo "<td>".$xkey."</td>"; 
-          foreach($xvalue as $key => $value) { echo "
-            <td>".$value."</td>"; 
+          foreach($xvalue as $key => $value) { 
+            echo "<td>".$value."</td>"; 
           } 
           echo "</tr>"; 
         } } 
@@ -119,6 +101,7 @@
            shoot(); 
            } 
            function shoot() { 
+            echo "hh";  
             // if($_POST["morocco_iran_1"] < $_POST["iran_morocco_1"]){ // $GLOBALS['Table']['iran']['points'] += 3; 
             // $GLOBALS['Table']['iran']['games_won'] += 1; // $GLOBALS['Table']['morocco']['games_lose'] += 1;
             // $GLOBALS['Table']['morocco']['games_played'] += 1; // $GLOBALS['Table']['iran']['games_played'] += 1;
@@ -149,14 +132,9 @@
             // } 
           }
            buildTable(); 
-            //  echo "<pre>";
-            //           print_r($matches);
-            //           echo "</pre>";
           ?>
       </table>
-      
         <button class="btn btn-outline-success w-25 container">Simulate</button>
-  
       </section>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
