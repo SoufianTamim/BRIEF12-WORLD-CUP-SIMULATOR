@@ -13,38 +13,66 @@
       <section>
         <?php
           $Table = ["morocco" => ["points" => $ptsM = 0,"games_played" => $playedM = 0,"games_won" => $wonM = 0,"games_equal" => $equalM = 0,"games_lose" => $loseM = 0, "goals_scored" => $scoredM = 0,"goals_received" => $receivedM = 0 , "difference" => $differenceM = 0],
-                    "portugual" => ["points" => $ptsP = 0,"games_played" => $playedP = 0, "games_won" => $wonP = 0,"games_equal" => $equalP = 0, "games_lose" => $loseP = 0, "goals_scored" => $scoredP = 0, "goals_received" => $receivedP = 0, "difference" => $differenceP = 0],
-                    "spain" => ["points" => $ptsS = 0,"games_played" => $playedS = 0, "games_won" => $wonS = 0,"games_equal" => $equalS = 0, "games_lose" => $loseS = 0, "goals_scored" => $scoredS = 0, "goals_received" => $receivedS = 0, "difference" => $differenceS = 0],
-                    "iran" => ["points" => $ptsI = 0,"games_played" => $playedI = 0, "games_won" => $wonI = 0,"games_equal" => $equalI = 0, "games_lose" => $loseI = 0, "goals_scored" => $scoredI = 0, "goals_received" => $receivedI = 0, "difference" => $differenceI = 0] 
-          ]; 
-           $matches = ["MOROCCO_VS_IRAN" =>      ["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
-                       "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
-                       "MOROCCO_VS_SPAIN" =>     ["MOROCCO" => 0,"SPAIN" => 0,"STAT" => false],
-                       "PORTUGUAL_VS_IRAN" =>    ["PORTUGUAL" => 0,"IRAN" => 0,"STAT" => false],
-                       "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
-                       "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
-                      ]; 
-            foreach ($matches as $xkey => $xvalue){ 
-              foreach ($xvalue as $key => $value){ 
-                
-                echo "<pre>";
-                print_r(array_keys($xvalue));
-                echo "</pre>";
+          "portugual" => ["points" => $ptsP = 0,"games_played" => $playedP = 0, "games_won" => $wonP = 0,"games_equal" => $equalP = 0, "games_lose" => $loseP = 0, "goals_scored" => $scoredP = 0, "goals_received" => $receivedP = 0, "difference" => $differenceP = 0],
+          "spain" => ["points" => $ptsS = 0,"games_played" => $playedS = 0, "games_won" => $wonS = 0,"games_equal" => $equalS = 0, "games_lose" => $loseS = 0, "goals_scored" => $scoredS = 0, "goals_received" => $receivedS = 0, "difference" => $differenceS = 0],
+          "iran" => ["points" => $ptsI = 0,"games_played" => $playedI = 0, "games_won" => $wonI = 0,"games_equal" => $equalI = 0, "games_lose" => $loseI = 0, "goals_scored" => $scoredI = 0, "goals_received" => $receivedI = 0, "difference" => $differenceI = 0] 
+        ]; 
+        $matches = ["MOROCCO_VS_IRAN" =>      ["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
+                    "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
+                    "MOROCCO_VS_SPAIN" =>     ["MOROCCO" => 0,"SPAIN" => 0,"STAT" => false],
+                    "PORTUGUAL_VS_IRAN" =>    ["PORTUGUAL" => 0,"IRAN" => 0,"STAT" => false],
+                    "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
+                    "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
+      ]; 
+
+      // $keys = array_keys($matches[0]);
+      // echo $keys[1];
+
+
+          foreach ($matches as $key => $value){   
+
+
+
+
+
+
+
+
+
+
         ?>
         <form method="post">
           <div class="d-flex align-items-center justify-content-center bg-info  p-2 m-2 rounded">
             <div class="d-flex flex-column">
               <div class="d-flex flex-row align-items-center justify-content-center">
                 <div class="d-flex flex-row">
-                  <p><?php echo $key; ?></p>
+                  <p><?php 
+                 
+
+                  foreach ($value as $nkey => $nvalue){
+                              if ($nvalue === 0) {
+                                echo $nkey;
+                                echo "<br>";
+                                break;
+                          }
+                           } 
+                      ?>
+                  </p>
                 </div>
                 <div class="d-flex flex-row align-items-center justify-content-center p-2 m-3 rounded w-50 bg-secondary">
-                  <input type="number" class="form-control mx-4 w-50" name="matchName" value="3" min="0" />
+                  <input type="number" class="form-control mx-4 w-50" name="matchName" value="0" min="0" />
                   <span>VS</span>
-                  <input type="number" class="form-control mx-3 w-50" name="matchName" value="2" min="0" readonly="readonly" />
+                  <input type="number" class="form-control mx-3 w-50" name="matchName" value="0" min="0" readonly="readonly" />
                 </div>
                 <div class="d-flex flex-row">
-                  <p><?php echo $key; ?></p>
+                  <p><?php  
+                        foreach ($value as $nkey => $nvalue) {
+                          $nkey = array_keys($value);
+                          echo $nkey[1] . "<br>";
+                          break;
+                      }
+                      ?>
+                  </p>
                 </div>
                 <div class="m-3">
                   <button class="btn btn-primary" type="submit" name="shoot">shoot</button>
@@ -54,7 +82,6 @@
           </div>
         </form>
         <?php
-          };
           };
         ?>
       </section>
