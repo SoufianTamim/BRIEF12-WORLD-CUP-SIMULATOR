@@ -60,10 +60,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
   </head>
   <body>
     <h1 class="text-center text-primary">WORLD CUP SIMULATOR</h1>
-    <section class="text-center d-flex flex-row">
-      
-      <section>
-        <h2 class="text-warning">GROUP F MATCHES</h2>
+        <h2 class="text-warning text-center">GROUP F MATCHES</h2>
+            <div class="text-center" >
+              <form method='POST' action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <input type="hidden" name="reset" value="reset">
+                <input type="submit"  class="btn btn-warning text-light"  value="RESET ALL MATCHES">
+              </form>
+            </div>
         <?php
         foreach($matches as $key => $val) {
           $contries = array();
@@ -73,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
             array_push($values, $nval);
         }
             ?>
-        <div class="d-flex  align-items-center justify-content-center bg-info p-2 m-2 rounded">
+        <div class="d-flex  align-items-center justify-content-center bg-info p-2 m-2 rounded container mx-auto">
           <form method='POST' action="<?php echo $_SERVER['PHP_SELF']; ?>" class="d-flex flex-row p-3" >
             <div class="d-flex flex-row align-items-center justify-content-center">
                 <p class=" text-light">  <?php echo  $contries[0] ?></p>
@@ -91,15 +94,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
         <?php 
         }
         ?>
-      <div class="text-center" >
-        <form method='POST' action="<?php echo $_SERVER['PHP_SELF']; ?>">
-          <input type="hidden" name="reset" value="reset">
-          <input type="submit"  class="btn btn-warning text-light"  value="RESET ALL MATCHES">
-        </form>
-      </div>
-      </section>
-      <section class="d-flex flex-column w-50 m-2 ">
+   
+      <section class="d-flex flex-column  m-2 container mx-auto ">
         <h2 class="text-center text-success">WINNER TABLE</h2>
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="text-center" >
+          <input type="hidden" name="_method" value="PUT">
+          <input type="submit"  class="btn btn-success w-25 container"  value="SIMULATE">
+      </form>
       <table class="table table-striped table-bordered  h-25 mt-5">
         <thead>
           <tr>
@@ -209,12 +210,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset(
               }
           ?>
       </table>
-      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="text-center" >
-        <input type="hidden" name="_method" value="PUT">
-        <input type="submit"  class="btn btn-success w-25 container"  value="SIMULATE">
-      </form>
+      
       </section>
-    </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
