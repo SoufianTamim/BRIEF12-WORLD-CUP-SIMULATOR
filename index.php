@@ -1,3 +1,40 @@
+<?php
+
+$Table = ["morocco" => ["points" => $ptsM = 0,"games_played" => $playedM = 0,"games_won" => $wonM = 0,"games_equal" => $equalM = 0,"games_lose" => $loseM = 0, "goals_scored" => $scoredM = 0,"goals_received" => $receivedM = 0 , "difference" => $differenceM = 0],
+"iran" => ["points" => $ptsI = 0,"games_played" => $playedI = 0, "games_won" => $wonI = 0,"games_equal" => $equalI = 0, "games_lose" => $loseI = 0, "goals_scored" => $scoredI = 0, "goals_received" => $receivedI = 0, "difference" => $differenceI = 0],
+"portugual" => ["points" => $ptsP = 0,"games_played" => $playedP = 0, "games_won" => $wonP = 0,"games_equal" => $equalP = 0, "games_lose" => $loseP = 0, "goals_scored" => $scoredP = 0, "goals_received" => $receivedP = 0, "difference" => $differenceP = 0],
+"spain" => ["points" => $ptsS = 0,"games_played" => $playedS = 0, "games_won" => $wonS = 0,"games_equal" => $equalS = 0, "games_lose" => $loseS = 0, "goals_scored" => $scoredS = 0, "goals_received" => $receivedS = 0, "difference" => $differenceS = 0]
+]; 
+$matches = ["MOROCCO_VS_IRAN" =>["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
+  "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
+  "MOROCCO_VS_SPAIN" =>     ["MOROCCO" => 0,"SPAIN" => 0,"STAT" => false],
+  "PORTUGUAL_VS_IRAN" =>    ["PORTUGUAL" => 0,"IRAN" => 0,"STAT" => false],
+  "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
+  "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
+]; 
+
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset($_POST['TeamOne'])  && isset($_POST['TeamTwo']) ){
+ $matches[$_POST['MatchName']][$_POST['TeamOne'][0]] = $_POST['TeamOne'][1] ;
+ $matches[$_POST['MatchName']][$_POST['TeamTwo'][0]] = $_POST['TeamTwo'][1] ;
+ $matches[$_POST['MatchName']]['STAT'] = true ;
+
+} elseif($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['reset'])){
+    $matches = ["MOROCCO_VS_IRAN" =>["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
+    "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
+    "MOROCCO_VS_SPAIN" =>     ["MOROCCO" => 0,"SPAIN" => 0,"STAT" => false],
+    "PORTUGUAL_VS_IRAN" =>    ["PORTUGUAL" => 0,"IRAN" => 0,"STAT" => false],
+    "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
+    "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
+  ]; 
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,59 +49,49 @@
     <section class="text-center d-flex flex-row">
       <section>
         <?php
-          $Table = ["morocco" => ["points" => $ptsM = 0,"games_played" => $playedM = 0,"games_won" => $wonM = 0,"games_equal" => $equalM = 0,"games_lose" => $loseM = 0, "goals_scored" => $scoredM = 0,"goals_received" => $receivedM = 0 , "difference" => $differenceM = 0],
-                    "iran" => ["points" => $ptsI = 0,"games_played" => $playedI = 0, "games_won" => $wonI = 0,"games_equal" => $equalI = 0, "games_lose" => $loseI = 0, "goals_scored" => $scoredI = 0, "goals_received" => $receivedI = 0, "difference" => $differenceI = 0],
-                    "portugual" => ["points" => $ptsP = 0,"games_played" => $playedP = 0, "games_won" => $wonP = 0,"games_equal" => $equalP = 0, "games_lose" => $loseP = 0, "goals_scored" => $scoredP = 0, "goals_received" => $receivedP = 0, "difference" => $differenceP = 0],
-                    "spain" => ["points" => $ptsS = 0,"games_played" => $playedS = 0, "games_won" => $wonS = 0,"games_equal" => $equalS = 0, "games_lose" => $loseS = 0, "goals_scored" => $scoredS = 0, "goals_received" => $receivedS = 0, "difference" => $differenceS = 0]
-        ]; 
-        $matches = ["MOROCCO_VS_IRAN" =>      ["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
-                    "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
-                    "MOROCCO_VS_SPAIN" =>     ["MOROCCO" => 0,"SPAIN" => 0,"STAT" => false],
-                    "PORTUGUAL_VS_IRAN" =>    ["PORTUGUAL" => 0,"IRAN" => 0,"STAT" => false],
-                    "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
-                    "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
-      ]; 
-        foreach ($matches as $key => $value){   
-        ?>
-        <form method="post">
-          <div class="d-flex align-items-center justify-content-center bg-info  p-2 m-2 rounded">
-            <div class="d-flex flex-column">
-              <div class="d-flex flex-row align-items-center justify-content-center">
-                <div class="d-flex flex-row">
-                  <p><?php 
-                  foreach ($value as $nkey => $nvalue){
-                              if ($nvalue === 0) {
-                                echo $nkey;
-                                break;
-                          }
-                           } 
-                      ?>
-                  </p>
-                </div>
-                <div class="d-flex flex-row align-items-center justify-content-center p-2 m-3 rounded w-50 bg-secondary">
-                  <input type="number" class="form-control mx-4 w-50" name="matchName" value="0" min="0" />
-                  <span>VS</span>
-                  <input type="number" class="form-control mx-3 w-50" name="matchName" value="0" min="0" readonly="readonly" />
-                </div>
-                <div class="d-flex flex-row">
-                  <p><?php  
-                        foreach ($value as $nkey => $nvalue) {
-                          $nkey = array_keys($value);
-                          echo $nkey[1];
-                          break;
-                      }
-                      ?>
-                  </p>
-                </div>
-                <div class="m-3">
-                  <button class="btn btn-primary" type="submit" name="shoot">shoot</button>
-                </div>
+        if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['MatchName']) && isset($_POST['TeamOne'])  && isset($_POST['TeamTwo']) ){
+          $matches[$_POST['MatchName']][$_POST['TeamOne'][0]] = $_POST['TeamOne'][1] ;
+          $matches[$_POST['MatchName']][$_POST['TeamTwo'][0]] = $_POST['TeamTwo'][1] ;
+          $matches[$_POST['MatchName']]['STAT'] = true ;
+         
+         } elseif($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['reset'])){
+             $matches = ["MOROCCO_VS_IRAN" =>["MOROCCO" => 0,"IRAN" => 0,"STAT" => false], 
+             "POTUGUAL_VS_SPAIN" =>    ["PORTUGUAL" => 0,"SPAIN" => 0,"STAT" => false],
+             "MOROCCO_VS_SPAIN" =>     ["MOROCCO" => 0,"SPAIN" => 0,"STAT" => false],
+             "PORTUGUAL_VS_IRAN" =>    ["PORTUGUAL" => 0,"IRAN" => 0,"STAT" => false],
+             "MOROCCO_VS_PORTUGUAL" => ["MOROCCO" => 0,"PORTUGUAL" => 0,"STAT" => false],
+             "IRAN_VS_SPAIN" =>        ["IRAN" => 0, "SPAIN" => 0,"STAT" => false]
+           ]; 
+         }
+
+
+
+        foreach($matches as $key => $val) {
+          $contries = array();
+          $values = array();
+        foreach($val as $nkey => $nval){
+            array_push($contries, $nkey);
+            array_push($values, $nval);
+
+        }
+            ?>
+        <div class="d-flex  align-items-center justify-content-center bg-info p-2 m-2 rounded ">
+          <form method='POST' class="d-flex flex-row p-3" >
+            <div class="d-flex flex-row align-items-center justify-content-center">
+                <p class=" text-light">  <?php echo  $contries[0] ?></p>
+                  <input type="hidden"   name="TeamOne[]"  value="<?php echo $contries[0] ?>" >
+                  <input type="number"  min="0"   <?php if( $val["STAT"] == true ){echo "readonly";} ?>  class="form-control mx-3 w-25" name="TeamOne[]"  value="<?php echo $values[0] ?>" >
+                  <p class="text-light">VS</p>
+                  <input type="hidden"  class="w-25 mx-auto " name="TeamTwo[]" value="<?php echo $contries[1] ?>" >
+                  <input type="number" min="0"  <?php if( $val["STAT"] == true ){echo "readonly";} ?>  class="form-control mx-3 w-25" name="TeamTwo[]" value="<?php echo $values[1] ?>" >
+                  <p class=" text-light " >  <?php echo $contries[1] ?></p>
               </div>
-            </div>
-          </div>
-        </form>
-        <?php
-          };
+              <input type="hidden"  class="m-3 btn btn-primary" name="MatchName" value="<?php echo $key ?>" >
+              <input type="submit" <?php if( $val["STAT"] == true ){echo "disabled";} ?> value="PLAY" class="btn btn-primary m-3" > 
+            </form>
+        </div>
+        <?php 
+        }
         ?>
       </section>
       <section class="d-flex flex-column w-50 h-50 m-2 ">
@@ -101,7 +128,7 @@
            shoot(); 
            } 
            function shoot() { 
-            echo "hh";  
+
             // if($_POST["morocco_iran_1"] < $_POST["iran_morocco_1"]){ // $GLOBALS['Table']['iran']['points'] += 3; 
             // $GLOBALS['Table']['iran']['games_won'] += 1; // $GLOBALS['Table']['morocco']['games_lose'] += 1;
             // $GLOBALS['Table']['morocco']['games_played'] += 1; // $GLOBALS['Table']['iran']['games_played'] += 1;
@@ -132,6 +159,89 @@
             // } 
           }
            buildTable(); 
+
+
+
+
+
+           function getTheOposite( $array , $firstteam ){
+            $arrayData = $array ;
+             unset($arrayData[$firstteam]);
+             unset($arrayData["Status"]);
+        foreach ($arrayData as $key => $value) {
+            return $key ;
+        }
+            }
+           function TableCount($finalArr){
+            $Teams = [];
+            // this codes used to get the available teams from the finalArr ;
+            $TheTeamsKeys = array();
+            foreach($finalArr as $key => $val) {
+                $contries = array();
+                $values = array();
+             foreach($val as $valkey => $miniVAL){
+                 array_push($contries, $valkey);
+                 array_push($values, $miniVAL);
+                 array_push($TheTeamsKeys, $valkey);
+             }
+            }
+            foreach ($TheTeamsKeys as $key => $value) {
+                if($value == "Status"){
+                    unset($TheTeamsKeys[$key]);
+                }
+            }
+            $TheTeamsKeys = array_values(array_unique($TheTeamsKeys));
+            foreach($TheTeamsKeys as $value){
+             $Teams += [$value => [["points" =>  0,"games_played" =>  0,"games_won" =>  0,"games_equal" =>  0,"games_lose" =>  0, "goals_scored" =>  0,"goals_received" =>  0 , "difference" =>  0]]];
+            }
+            foreach ($Teams as $key => $value) {
+                $games_played = 0 ;
+                $games_won = 0 ;
+                $games_equal = 0 ;
+                $games_lose = 0 ;
+                $points = ( $games_won * 3 ) + ( $games_equal * 1 ) ;
+                $goals_scored = 0 ;
+                $goals_received = 0 ;
+                $difference = $goals_scored - $goals_received ;
+                foreach ($finalArr as $DataKey => $DataValue) {
+                    if(isset($DataValue[$key])){
+                        $goals_scored += $DataValue[$key] ;
+                        $goals_received += $DataValue[getTheOposite( $DataValue , $key )] ;
+                        if($DataValue["Status"] == true){
+                            $games_played += 1 ;
+                        }
+            if( $DataValue[$key] > $DataValue[getTheOposite( $DataValue , $key )] ){
+                $games_won += 1;
+            } elseif( $DataValue[$key] < $DataValue[getTheOposite( $DataValue , $key )] ){
+                $games_lose += 1;
+            } elseif( $DataValue[$key] == $DataValue[getTheOposite( $DataValue , $key )] ){
+                $games_equal += 1;
+            } 
+                    }
+                }
+                $Teams[$key]["goals_scored"] = $goals_scored ; 
+                $Teams[$key]["goals_received"] = $goals_received ; 
+                $Teams[$key]["difference"] = $goals_scored - $goals_received ; 
+                $Teams[$key]["games_played"] = $games_played ; 
+                $Teams[$key]["games_won"] = $games_won ; 
+                $Teams[$key]["games_lose"] = $games_lose ; 
+                $Teams[$key]["games_equal"] = $games_equal ; 
+                $Teams[$key]["points"] = ( $games_won * 3 ) + ( $games_equal * 1 ) ; 
+            }
+            return dataFormChanger($Teams);
+            };
+
+
+
+
+
+
+
+
+
+
+
+
           ?>
       </table>
         <button class="btn btn-outline-success w-25 container">Simulate</button>
